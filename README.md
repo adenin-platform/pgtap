@@ -126,6 +126,31 @@ schema, use the `SCHEMA` clause to specify the schema, like so:
 CREATE EXTENSION pgtap SCHEMA tap;
 ```
 
+Development Environment
+-----------------------
+
+For development and testing, you can use the provided devcontainer configuration which includes PostgreSQL 17 and all necessary dependencies:
+
+1. Open the repository in VS Code
+2. When prompted, click "Reopen in Container" or run the "Dev Containers: Reopen in Container" command
+3. The devcontainer will automatically:
+   - Install PostgreSQL 17 with contrib extensions
+   - Install all build dependencies (make, perl, patch, etc.)
+   - Start the PostgreSQL service
+   - Set up a development database
+
+Once the container is running, you can build pgTAP with:
+
+```sh
+make
+```
+
+This will generate the required SQL files:
+- `sql/pgtap.sql`
+- `sql/uninstall_pgtap.sql`
+- `sql/pgtap-core.sql`
+- `sql/pgtap-schema.sql`
+
 Dependencies
 ------------
 
