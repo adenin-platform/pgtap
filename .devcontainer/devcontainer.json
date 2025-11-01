@@ -1,0 +1,24 @@
+{
+  "name": "pgTAP Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  },
+  "forwardPorts": [5432],
+  "portsAttributes": {
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "sudo service postgresql start",
+  "remoteUser": "vscode"
+}
